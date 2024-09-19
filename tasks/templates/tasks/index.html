@@ -1,13 +1,14 @@
 {% extends "tasks/layout.html"%}
     
 
-
 {% block body%}
    <h1>Tasks</h1>
    {% for task in tasks %}
           <ul>
            <li>{{ task }}</li>  
           </ul>
+         {% empty %}
+         <li>No tasks</li>
    {% endfor %}
 
    <a href="{% url 'tasks:add'%}">Add new task</a>
